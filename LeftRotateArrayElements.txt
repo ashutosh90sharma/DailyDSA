@@ -1,0 +1,59 @@
+Program to left rotate the elements of an array
+
+12345
+left shift by 1
+23451
+
+left shift by 2
+34512
+
+
+
+class Pattern1 {
+    public static void main(String[] args) {
+        int a[]={1,2,3,4,5};
+        rotateleft(a);
+        for(int x:a){
+            System.out.print(x+" ");
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    }
+    public static int[] rotate(int a[],int start,int end){
+        while (start<=end){
+            int temp=a[start];
+            a[start]=a[end];
+            a[end]=temp;
+            start++;
+            end--;
+        }
+        return a;
+    }
+    public static int[] rotateleft(int a[]){
+        rotate(a,0,0);//for leftshift by 2 a,0,1
+       rotate(a,1,a.length-1);//a,2,a.length-1
+
+
+        rotate(a,0,a.length-1);
+        return a;
+    }
+
+
+
+
+}
+
+
