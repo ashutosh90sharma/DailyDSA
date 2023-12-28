@@ -1,0 +1,71 @@
+Find second largest element:
+
+Input: arr[] = {12, 35, 1, 10, 34, 1}
+Output: The second largest element is 34.
+Explanation: The largest element of the array is 35 and the second largest element is 34
+
+Input: arr[] = {10, 5, 10}
+Output: The second largest element is 5.
+Explanation: The largest element of the array is 10 and the second largest element is 5
+
+import java.util.*;
+import java.util.Collections;
+
+class Pattern1  {
+
+    public static void main(String[] args) {
+        int   a[] = {10, 4, 3, 50, 23, 90};
+
+        Arrays.sort(a);
+       for(int i=a.length-1;i>=0;i--){
+           if(a[i]!=a[a.length-1]){
+               System.out.println("second largest is"+a[i]);
+               return;
+           }
+       }
+
+
+
+
+
+
+
+    }
+}
+
+========================
+secod approach
+
+import java.util.*;
+import java.util.Collections;
+
+class Pattern1  {
+
+    public static void main(String[] args) {
+        int   a[] = {10, 4, 3, 50, 23, 90};
+        int first,second;
+        first=second=Integer.MIN_VALUE;
+        for(int i=0;i<a.length;i++){
+            if(a[i]>first){
+                second=first;
+                first=a[i];
+            }
+            else if(a[i]>second){
+                second=a[i];
+            }
+        }
+        System.out.println("second largest is"+second);
+
+
+
+
+
+
+
+
+
+    }
+}
+
+
+
